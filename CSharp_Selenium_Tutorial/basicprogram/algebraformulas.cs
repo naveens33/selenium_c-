@@ -13,7 +13,7 @@ namespace CSharp_Selenium_Tutorial
         [TestMethod]
         public void formula()
         {
-            //(a+b)^2=a^2+b^2+2ab
+            //simple formula (a+b)^2=a^2+b^2+2ab
 
             int a = 6;
             int b = 5;
