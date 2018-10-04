@@ -50,13 +50,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="arraysexample1.cs" />
     <Compile Include="basicprogram\algebraformulas.cs" />
     <Compile Include="conditionstatement\elseifstatement.cs" />
     <Compile Include="conditionstatement\ifelsestatements.cs" />
     <Compile Include="conditionstatement\nestedifstatement.cs" />
     <Compile Include="conditionstatement\switchstatement.cs" />
     <Compile Include="basicprogram\swap2number.cs" />
+    <Compile Include="loopingstatement\dowhilestatement.cs" />
+    <Compile Include="loopingstatement\forloopstatement.cs" />
+    <Compile Include="multidimensionalarrayexample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="loopingstatement\whilestatement.cs" />
   </ItemGroup>
   <ItemGroup />
   <Choose>
