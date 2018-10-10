@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Diagnostics;
 
 namespace CSharp_Selenium_Tutorial
 {
@@ -18,6 +19,8 @@ namespace CSharp_Selenium_Tutorial
             num2 = temp;
             Console.WriteLine("num1: " + num1);
             Console.WriteLine("num2: " + num2);
+
         }
     }
+   
 }
