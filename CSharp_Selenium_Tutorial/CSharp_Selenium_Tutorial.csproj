@@ -43,6 +43,10 @@
       <HintPath>..\packages\Selenium.WebDriver.3.14.0\lib\net45\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WebDriver.Support, Version=3.14.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.14.0\lib\net45\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -68,6 +72,7 @@
     <Compile Include="collections\dictionaryexample.cs" />
     <Compile Include="collections\hastablexample.cs" />
     <Compile Include="collections\listexample.cs" />
+    <Compile Include="TransferFundTS.cs" />
     <Compile Include="UnitTest_Selenium\LoginScenario.cs" />
     <Compile Include="loopingstatement\dowhilestatement.cs" />
     <Compile Include="loopingstatement\forloopstatement.cs" />
