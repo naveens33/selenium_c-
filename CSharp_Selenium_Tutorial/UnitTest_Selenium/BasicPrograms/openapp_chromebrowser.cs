@@ -12,10 +12,11 @@ namespace CSharp_Selenium_Tutorial
     [TestClass]
     public class openapp_chromebrowser
     {
-        [TestMethod]
+        IWebDriver driver;
+      [TestMethod]
         public void OpenApplication()
         {
-            IWebDriver driver = new ChromeDriver();
+            driver = new ChromeDriver();
             driver.Url = "http://zero.webappsecurity.com/index.html";
 
             

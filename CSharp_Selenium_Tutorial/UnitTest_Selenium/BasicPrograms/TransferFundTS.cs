@@ -36,7 +36,7 @@ namespace CSharp_Selenium_Tutorial
         [ClassCLeanup]-1
         */
         IWebDriver driver;
-                [TestInitialize]
+        [TestInitialize]
         public void setup()
         {
             driver = new ChromeDriver();
@@ -59,7 +59,7 @@ namespace CSharp_Selenium_Tutorial
             driver.FindElement(By.XPath("//*[@id='transfer_funds_tab']/a")).Click();
             Assert.AreEqual("Zero - Transfer Funds", driver.Title);
 
-            IWebElement fromaccount = driver.FindElement(By.Id("tf_fromAccountId"));
+            IWebElement fromaccount = driver.FindElement(By.XPath("//*[@id='tf_fromAccountId']"));
             SelectElement dropdown1 = new SelectElement(fromaccount);
             dropdown1.SelectByText("Savings(Avail. balance = $ 1548)");
 
@@ -71,11 +71,15 @@ namespace CSharp_Selenium_Tutorial
             driver.FindElement(By.XPath("//*[@id='tf_description']")).SendKeys("CreditCard Bill");
 
             driver.FindElement(By.XPath("//*[@id='btn_submit']")).Click();
-
-            IWebElement fromaccountdis =driver.FindElement(By.XPath("//*[@id='tf_fromAccountId']"));
-            Assert.AreEqual(false, fromaccountdis.Enabled);
+                
+            //IWebElement fromaccountdis =driver.FindElement(By.XPath("//*[@id='tf_fromAccountId']"));
+            Assert.AreEqual(false, fromaccount.Enabled);
 
             driver.FindElement(By.XPath("//*[@id='btn_submit']")).Click();
+
+            IWebElement browse = driver.FindElement(By.Id("uploadfile"));
+            //pass the path of the file to be uploaded using Sendkeys method
+            browse.SendKeys("D:\\SoftwareTestingMaterial\\UploadFile.txt");
 
             Assert.AreEqual("You successfully submitted your transaction.", driver.FindElement(By.XPath("//*[@id='transfer_funds_content']/div/div/div[1]")).Text);
         }
