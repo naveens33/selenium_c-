@@ -52,12 +52,13 @@ namespace CSharp_Selenium_Tutorial
             driver.FindElement(By.Name("submit")).Click();
 
             Assert.AreEqual("Zero - Account Summary", driver.Title);
+            TakesScreenshot();
         }
         [TestMethod]
         public void TransferFunTC1()
         {
             driver.FindElement(By.XPath("//*[@id='transfer_funds_tab']/a")).Click();
-            Assert.AreEqual("Zero - Transfer Funds", driver.Title);
+            //Assert.AreEqual("Zero - Transfer Funds", driver.Title);
 
             IWebElement fromaccount = driver.FindElement(By.XPath("//*[@id='tf_fromAccountId']"));
             SelectElement dropdown1 = new SelectElement(fromaccount);
@@ -72,22 +73,39 @@ namespace CSharp_Selenium_Tutorial
 
             driver.FindElement(By.XPath("//*[@id='btn_submit']")).Click();
                 
-            //IWebElement fromaccountdis =driver.FindElement(By.XPath("//*[@id='tf_fromAccountId']"));
-            Assert.AreEqual(false, fromaccount.Enabled);
+            IWebElement fromaccountdis =driver.FindElement(By.XPath("//*[@id='tf_fromAccountId']"));
+            Assert.AreEqual(false, fromaccountdis.Enabled);
 
             driver.FindElement(By.XPath("//*[@id='btn_submit']")).Click();
+            /*
+                        IWebElement browse = driver.FindElement(By.Id("uploadfile"));
+                        //pass the path of the file to be uploaded using Sendkeys method
+                        browse.SendKeys("D:\\SoftwareTestingMaterial\\UploadFile.txt");
+                        */
 
-            IWebElement browse = driver.FindElement(By.Id("uploadfile"));
-            //pass the path of the file to be uploaded using Sendkeys method
-            browse.SendKeys("D:\\SoftwareTestingMaterial\\UploadFile.txt");
+            IJavaScriptExecutor jsDriver = (IJavaScriptExecutor)driver;
+
+            new Action(() => { jsDriver.ExecuteScript(@"$(arguments[0]).css({ ""border-width"" : ""2px"", ""border-style"" : ""solid"", ""border-color"" : ""Fuchsia"" });", new object[] { driver.FindElement(By.XPath("//*[@id='transfer_funds_content']/div/div/div[1]")) }); })();
+
+            TakesScreenshot();
 
             Assert.AreEqual("You successfully submitted your transaction.", driver.FindElement(By.XPath("//*[@id='transfer_funds_content']/div/div/div[1]")).Text);
+
+        }
+
+        public void TakesScreenshot()
+        {
+
+            var time = DateTime.Now;
+            string formattedTime = time.ToString("yyyyMMdd_hh_mm_ss");
+            string filename = "Screenshot_" + formattedTime;
+            ((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("d:\\"+ filename + ".jpeg", ScreenshotImageFormat.Jpeg);
         }
 
         [TestCleanup]
         public void quit()
         {
-            driver.Close();
+           // driver.Close();
         }
     }
 }

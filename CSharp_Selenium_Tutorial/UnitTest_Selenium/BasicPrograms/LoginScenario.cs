@@ -51,6 +51,7 @@ namespace CSharp_Selenium_Tutorial
             Assert.AreEqual("Zero - Log in", driver.Title);
 
             Assert.AreEqual("Login and/or password are wrong.", driver.FindElement(By.CssSelector("#login_form > div.alert.alert-error")).Text);
+
         }
     }
 }
