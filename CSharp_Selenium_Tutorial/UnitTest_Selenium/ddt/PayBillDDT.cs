@@ -8,13 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharp_Selenium_Tutorial
+namespace CSharp_Selenium_Tutorial.UnitTest_Selenium.ddt
 {
     [TestClass]
-    public class datadriventest
+    public class PayBillDDT
     {
         IWebDriver driver = null;
-       
 
         [TestInitialize]
         public void initialize()
@@ -33,15 +32,13 @@ namespace CSharp_Selenium_Tutorial
 
             Assert.AreEqual("Zero - Account Summary", driver.Title);
         }
-
         public TestContext TestContext { get; set; }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV",
             @"C:\Users\naveen.s\Documents\Visual Studio 2015\Projects\CSharp_Selenium_Tutorial\CSharp_Selenium_Tutorial\UnitTest_Selenium\ddt\PaySavedPayee.csv", "PaySavedPayee#csv",
             DataAccessMethod.Sequential), DeploymentItem(@"C:\Users\naveen.s\Documents\Visual Studio 2015\Projects\CSharp_Selenium_Tutorial\CSharp_Selenium_Tutorial\UnitTest_Selenium\ddt\PaySavedPayee.csv"),
             TestMethod]
-       
-       public void MakePayment() 
+        public void MakePayment()
         {
 
             driver.FindElement(By.XPath("//a[text()='Pay Bills']")).Click();
@@ -49,30 +46,29 @@ namespace CSharp_Selenium_Tutorial
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             IWebElement element = wait.Until(ExpectedConditions.ElementIsVisible(By.Id("sp_payee")));
 
-            SelectElement payee = new SelectElement(element);
-            payee.SelectByText(this.TestContext.DataRow["Payee"].ToString());
+            SelectElement payeeelement = new SelectElement(driver.FindElement(By.Id("sp_payee")));
+            payeeelement.SelectByText(TestContext.DataRow["Payee"].ToString());
 
-            SelectElement account = new SelectElement(driver.FindElement(By.Id("sp_account")));
-            account.SelectByText(this.TestContext.DataRow["Account"].ToString());
+            SelectElement accountelement = new SelectElement(driver.FindElement(By.Id("sp_account")));
+            accountelement.SelectByText(TestContext.DataRow["Account"].ToString());
 
-            driver.FindElement(By.Id("sp_amount")).SendKeys(this.TestContext.DataRow["Amount"].ToString());
+            driver.FindElement(By.Id("sp_amount")).SendKeys(TestContext.DataRow["Amount"].ToString());
 
             string actualdate = this.TestContext.DataRow["Date"].ToString();
             string[] date = actualdate.Split('-');
             Console.WriteLine(date[0] + " " + date[1] + " " + date[2]);
             //03-10-2018000000
-            
-            driver.FindElement(By.Id("sp_date")).SendKeys(date[2].Substring(0,4) + " " + date[1] + " " + date[0]);
 
-            driver.FindElement(By.Id("sp_description")).SendKeys(this.TestContext.DataRow["Description"].ToString());
+            driver.FindElement(By.Id("sp_date")).SendKeys(date[2].Substring(0, 4) + "-" + date[1] + "-" + date[0]);
 
-            
+            driver.FindElement(By.Id("sp_description")).SendKeys(TestContext.DataRow["Description"].ToString());
         }
+
 
         [TestCleanup]
         public void quit()
         {
-            //driver.Close();
+            driver.Close();
         }
     }
-}
+    }

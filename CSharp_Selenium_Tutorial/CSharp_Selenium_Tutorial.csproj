@@ -75,9 +75,9 @@
     <Compile Include="collections\listexample.cs" />
     <Compile Include="UnitTest_Selenium\BasicPrograms\MyMoneyMap.cs" />
     <Compile Include="UnitTest_Selenium\BasicPrograms\VerifySearchFeature.cs" />
-    <Compile Include="UnitTest_Selenium\ddt\datadriventestattributes.cs" />
     <Compile Include="UnitTest_Selenium\BasicPrograms\TransferFundTS.cs" />
     <Compile Include="UnitTest_Selenium\ddt\sampledatadriventest.cs" />
+    <Compile Include="UnitTest_Selenium\ddt\PayBillDDT.cs" />
     <Compile Include="UnitTest_Selenium\unittestsnippet.cs" />
     <Compile Include="UnitTest_Selenium\BasicPrograms\LoginScenario.cs" />
     <Compile Include="loopingstatement\dowhilestatement.cs" />

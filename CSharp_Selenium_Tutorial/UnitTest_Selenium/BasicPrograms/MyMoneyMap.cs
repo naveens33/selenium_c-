@@ -41,20 +41,21 @@ namespace CSharp_Selenium_Tutorial.UnitTest_Selenium.BasicPrograms
              * ImplictWait have an impact in overall testing performance,
              * since the implicit wait will be used in all FindElement calls.
             */
-            //IWebElement element=new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists((By.XPath("//*[@id='gridview-1015-bd-Deposits']/td/table/tbody/tr[2]/td[1]/div"))));
+            IWebElement element = new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists((By.XPath("//*[@id='gridview-1015-bd-Deposits']/td/table/tbody/tr[2]/td[1]/div"))));
             //Console.WriteLine(element.Text);
             /*
-             * Explicit Wait, is a one-timer used by you for a particular search. 
-             * It is more extendible in the means that can set it up to wait for any condition.
+             * Explicit Wait, is a one-timer used for a particular search. 
+             * It is more extendible in the means that we can set it up to wait for any condition.
              * Usually, some of the prebuilt ExpectedConditions to wait for elements to become clickable, visible, invisible, etc.,
              */ 
-            driver.FindElement(By.XPath("//*[@id='gridview-1015-bd-Deposits']/td/table/tbody/tr[2]/td[1]/div"));
+            Assert.AreEqual("Direct Deposits",element.Text);
+            Assert.AreEqual("Other Deposits", driver.FindElement(By.XPath("//*[@id='gridview-1015-bd-Deposits']/td/table/tbody/tr[3]/td[1]/div")).Text);
         }
 
         [TestCleanup]
         public void close()
         {
-            //driver.Close();
+            driver.Close();
         }
     }
 }

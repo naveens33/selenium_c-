@@ -31,7 +31,7 @@ namespace CSharp_Selenium_Tutorial
     [ExpectedException(typeof(ElementNotVisibleException),AllowDerivedTypes =true)]
     public void tm2()
     {
-            throw new ElementNotVisibleException();
+         throw new ElementNotVisibleException();
         Console.WriteLine("TestMethod-2");
     }
 
