@@ -34,12 +34,11 @@ namespace NUnit_Selenium
         }
 
         [Test, Combinatorial]
-        public void TestCase3(
-        [Values(1, 2, 3)] int x,
-        [Values("A", "B")] string s)
+        public void TestCase3([Values("Australia", "Canada", "Denmark")] string country, [Values("56", "89")] string amount)
         {
-            Console.WriteLine("Test Case 3 -- Value: " + x + s);
+            Console.WriteLine("Test Case 3 -- Value: " + country + " " + amount);
         }
+
 
         [Test]
         [Ignore("This testcase is Ignored")]
