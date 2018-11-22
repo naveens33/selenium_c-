@@ -7,7 +7,7 @@ namespace NUnit_Selenium
     [TestFixture]
     [Author("Naveen.S", "naveens@deltaww.com")]//Multiple Author details also allowed
     [Description("Nunit Attribute Snippet explaination")]
-    public class NUnitSnippet
+    public class Test1
     {
         [OneTimeSetUp]
         public void onetimesetup()
@@ -64,25 +64,20 @@ namespace NUnit_Selenium
         [Test, Order(3)]
         public void TestCase7()
         {
-            Thread.Sleep(25);
-            Console.WriteLine("Test Case 6");
+            Console.WriteLine("Test Case 7");
         }
 
         [Test, Order(1)]
         public void TestCase8()
         {
-            Thread.Sleep(25);
-            Console.WriteLine("Test Case 6");
+            Console.WriteLine("Test Case 8");
         }
 
         [Test, Order(2)]
         public void TestCase9()
         {
-            Thread.Sleep(25);
-            Console.WriteLine("Test Case 6");
+            Console.WriteLine("Test Case 9");
         }
-
-
 
         [TearDown]
         public void teardown()

@@ -59,8 +59,10 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="NUnitSnippet.cs" />
-    <Compile Include="FeedbackFeature.cs" />
+    <Compile Include="NUnitSnippet\Test2.cs" />
+    <Compile Include="NUnitSnippet\Test1.cs" />
+    <Compile Include="FeedbackFeature\FeedbackFeature.cs" />
+    <Compile Include="OnlineBankingPage\LinksVerification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
