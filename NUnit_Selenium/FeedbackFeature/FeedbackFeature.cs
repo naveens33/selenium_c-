@@ -32,6 +32,7 @@ namespace NUnit_Selenium
             driver.FindElement(By.XPath("//*[@id='comment']")).SendKeys("Not able to login");
             driver.FindElement(By.Name("submit")).Click();
             Assert.AreEqual(true, driver.FindElement(By.XPath("//div[@class='offset3 span6']")).Text.Contains("Sankar"));
+            ((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("D:\\screenshot.jpeg", ScreenshotImageFormat.Jpeg);
         }
 
         [Test]

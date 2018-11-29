@@ -73,6 +73,9 @@
     <Compile Include="collections\dictionaryexample.cs" />
     <Compile Include="collections\hastablexample.cs" />
     <Compile Include="collections\listexample.cs" />
+    <Compile Include="Exception Handling\rethrowexample.cs" />
+    <Compile Include="Exception Handling\throwexample.cs" />
+    <Compile Include="Exception Handling\trycatch.cs" />
     <Compile Include="UnitTest_Selenium\BasicPrograms\MyMoneyMap.cs" />
     <Compile Include="UnitTest_Selenium\BasicPrograms\VerifySearchFeature.cs" />
     <Compile Include="UnitTest_Selenium\BasicPrograms\TransferFundTS.cs" />
