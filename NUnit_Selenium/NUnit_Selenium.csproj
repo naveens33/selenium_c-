@@ -49,6 +49,10 @@
       <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -59,16 +63,19 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="FindTransactions\FindTransactions.cs" />
     <Compile Include="NUnitSnippet\Test2.cs" />
     <Compile Include="NUnitSnippet\Test1.cs" />
     <Compile Include="FeedbackFeature\FeedbackFeature.cs" />
     <Compile Include="OnlineBankingPage\LinksVerification.cs" />
+    <Compile Include="PageObjectModel\LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="NUnit_Syllabus.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
