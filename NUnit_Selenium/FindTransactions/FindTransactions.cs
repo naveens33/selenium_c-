@@ -1,7 +1,9 @@
 ﻿using NUnit.Framework;
+using NUnit_Selenium.PageObjectModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.PageObjects;
+using System;
 
 namespace NUnit_Selenium.FindTransactions
 {
@@ -33,8 +35,24 @@ namespace NUnit_Selenium.FindTransactions
         [Test]
         public void FindByDateAndType()
         {
+            var accontsummaryPage = new AccountSummaryPage();
+            PageFactory.InitElements(driver, accontsummaryPage);
+            accontsummaryPage.AccountActivityLink.Click();
+
+            var accountactivityshowPage = new AccountActivity_Show();
+            PageFactory.InitElements(driver, accountactivityshowPage);
+            accountactivityshowPage.FindTransactionsLink.Click();
+
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            var accountactivityfindPage = new AccountActivity_Find();
+            PageFactory.InitElements(driver, accountactivityfindPage);
+            accountactivityfindPage.FromDate.SendKeys("2012-01-01");
+            accountactivityfindPage.ToDate.SendKeys("2012-12-31");
+            accountactivityfindPage.FindButton.Click();
+
+
         }
-        
+
         [TearDown]
         public void teardown()
         {

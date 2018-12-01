@@ -68,6 +68,9 @@
     <Compile Include="NUnitSnippet\Test1.cs" />
     <Compile Include="FeedbackFeature\FeedbackFeature.cs" />
     <Compile Include="OnlineBankingPage\LinksVerification.cs" />
+    <Compile Include="PageObjectModel\AccountActivity_Find.cs" />
+    <Compile Include="PageObjectModel\AccountActivity_Show.cs" />
+    <Compile Include="PageObjectModel\AccountSummaryPage.cs" />
     <Compile Include="PageObjectModel\LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
