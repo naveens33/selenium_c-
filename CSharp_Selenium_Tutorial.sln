@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp_Selenium_Tutorial", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit_Selenium", "NUnit_Selenium\NUnit_Selenium.csproj", "{73A93D8E-32B0-469F-B63A-9C189CE5A067}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlow_Tutorial", "SpecFlow_Tutorial\SpecFlow_Tutorial.csproj", "{E3195047-6AC8-4769-A248-210592068137}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{73A93D8E-32B0-469F-B63A-9C189CE5A067}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73A93D8E-32B0-469F-B63A-9C189CE5A067}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73A93D8E-32B0-469F-B63A-9C189CE5A067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3195047-6AC8-4769-A248-210592068137}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3195047-6AC8-4769-A248-210592068137}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3195047-6AC8-4769-A248-210592068137}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3195047-6AC8-4769-A248-210592068137}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
