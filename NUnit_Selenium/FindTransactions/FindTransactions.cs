@@ -3,7 +3,13 @@ using NUnit_Selenium.PageObjectModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 
 namespace NUnit_Selenium.FindTransactions
 {
@@ -31,10 +37,11 @@ namespace NUnit_Selenium.FindTransactions
 
             Assert.AreEqual("Zero - Account Summary", driver.Title);
         }
-
+        
         [Test]
         public void FindByDateAndType()
         {
+            
             var accontsummaryPage = new AccountSummaryPage();
             PageFactory.InitElements(driver, accontsummaryPage);
             accontsummaryPage.AccountActivityLink.Click();
@@ -49,9 +56,9 @@ namespace NUnit_Selenium.FindTransactions
             accountactivityfindPage.FromDate.SendKeys("2012-01-01");
             accountactivityfindPage.ToDate.SendKeys("2012-12-31");
             accountactivityfindPage.FindButton.Click();
-
-
+            
         }
+
 
         [TearDown]
         public void teardown()
